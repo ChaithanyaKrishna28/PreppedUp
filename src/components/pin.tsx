@@ -1,6 +1,4 @@
 import { Interview } from "@/types"
-import { useAuth } from "@clerk/clerk-react";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   Card,

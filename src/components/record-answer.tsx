@@ -42,7 +42,6 @@ export const RecordAnswer = ({
   setIsWebCam,
 }: RecordAnswerProps) => {
   const {
-    error,
     interimResult,
     isRecording,
     results,

@@ -1,7 +1,9 @@
+
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { db } from "@/config/firebase.config";
 import { Interview } from "@/types";
 import { doc, getDoc } from "firebase/firestore";
-import React, { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { LoaderPage } from "./loader-page";
 import { CustomBreadCrumb } from "@/components/custom-bread-crumb";
@@ -21,6 +23,7 @@ export const MockLoadPage = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
+      setIsLoading(true);
         const fetchInterview = async () => {
           if (interviewId) {
             try {
