@@ -1,5 +1,4 @@
-import { Interview } from "@/types"
-
+import { Interview } from "@/types";
 import { useNavigate } from "react-router-dom";
 import {
   Card,
