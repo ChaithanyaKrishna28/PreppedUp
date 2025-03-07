@@ -92,5 +92,6 @@ export const MockInterviewPage = () => {
           <QuestionSection questions={interview?.questions} />
         </div>
       )}
-  </div>);
+  </div>
+  );
 };

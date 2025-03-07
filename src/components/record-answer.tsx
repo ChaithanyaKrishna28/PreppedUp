@@ -208,6 +208,7 @@ export const RecordAnswer = ({
       <div className="w-full h-[400px] md:w-96 flex flex-col items-center justify-center border p-4 bg-gray-50 rounded-md">
         {isWebCam ? (
           <Webcam
+            mirrored={true}
             onUserMedia={() => setIsWebCam(true)}
             onUserMediaError={() => setIsWebCam(false)}
             className="w-full h-full object-cover rounded-md"

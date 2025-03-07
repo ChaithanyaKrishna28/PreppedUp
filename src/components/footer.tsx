@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react"; // Import Lucide icons
+import { Twitter, Instagram, Linkedin, Github } from "lucide-react"; // Import Lucide icons
 import { Link } from "react-router-dom";
 import { Container } from "@/components/container";
 import { MainRoutes } from "@/lib/helpers";
@@ -63,45 +63,27 @@ export const Footer = () => {
           <div>
             <h3 className="font-bold text-lg mb-4">About Us</h3>
             <p>
-              We are committed to helping you unlock your full potential with
-              AI-powered tools. Our platform offers a wide range of resources to
-              improve your interview skills and chances of success.
+              At PreppedUP, we believe preparation is the key to success. Our AI generates mock interviews to help you sharpen your skills and ace your dream job interviews.
             </p>
-          </div>
-
-          {/* Third Column: Services */}
-          <div>
-            <h3 className="font-bold text-lg mb-4">Services</h3>
-            <ul>
-              <FooterLink to="/services/interview-prep">
-                Interview Preparation
-              </FooterLink>
-              <FooterLink to="/services/career-coaching">
-                Career Coaching
-              </FooterLink>
-              <FooterLink to="/services/resume-building">
-                Resume Building
-              </FooterLink>
-            </ul>
           </div>
 
           {/* Fourth Column: Address and Social Media */}
           <div>
             <h3 className="font-bold text-lg mb-4">Contact Us</h3>
-            <p className="mb-4">123 AI Street, Tech City, 12345</p>
+            <p className="mb-4">Vishnupur, Narsapur, Tuljaraopet, Telangana 502313</p>
             <div className="flex gap-4">
               <SocialLink
-                href="https://facebook.com"
-                icon={<Facebook size={24} />}
+                href="https://github.com/chaithanyakrishna28"
+                icon={<Github size={24} />}
                 hoverColor="text-blue-500"
               />
               <SocialLink
-                href="https://twitter.com"
+                href="https://x.com/Chaithanya1082"
                 icon={<Twitter size={24} />}
                 hoverColor="text-blue-400"
               />
               <SocialLink
-                href="https://instagram.com"
+                href="https://instagram.com/mr_chaithu____"
                 icon={<Instagram size={24} />}
                 hoverColor="text-pink-500"
               />
@@ -112,7 +94,12 @@ export const Footer = () => {
               />
             </div>
           </div>
+          {/* Developer Credit */}
+        <footer className="flex-col mt-8 text-center text-sm text-gray-400">
+          <p>Developed by <span className="font-semibold text-white">K. Chaithanya Krishna</span></p>
+        </footer>
         </div>
+        
       </Container>
     </div>
   );

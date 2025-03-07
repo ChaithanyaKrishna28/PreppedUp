@@ -6,14 +6,12 @@ interface NavigationRoutesProps {
   isMobile?: boolean;
 }
 
-export const NavigationRoutes = ({
-  isMobile = false,
-}: NavigationRoutesProps) => {
+export const NavigationRoutes = ({ isMobile = false }: NavigationRoutesProps) => {
   return (
     <ul
       className={cn(
-        "flex items-center gap-6",
-        isMobile && "items-start flex-col gap-8"
+        "flex items-center gap-4 text-base font-medium text-gray-700",
+        isMobile && "flex-col gap-6 items-start text-lg"
       )}
     >
       {MainRoutes.map((route) => (
@@ -22,8 +20,10 @@ export const NavigationRoutes = ({
           to={route.href}
           className={({ isActive }) =>
             cn(
-              "text-base text-neutral-600",
-              isActive && "text-neutral-900 font-semibold"
+              "transition-all duration-300 px-4 py-2 rounded-md hover:bg-accent-foreground hover:text-white",
+              isActive
+                ? "text-white bg-accent-foreground font-semibold border-b-2 border-accent"
+                : "text-gray-700"
             )
           }
         >

@@ -105,7 +105,7 @@ export const Feedback = () => {
     return <LoaderPage className="w-full h-[70vh]" />;
   }
   return (
-    <div className="flex flex-col w-full gap-8 py-5">
+    <div className="flex flex-col w-full gap-8 py-8 md:px-10">
       <div className="flex items-center justify-between w-full gap-2">
         <CustomBreadCrumb
           breadCrumbPage={"Feedback"}
@@ -118,23 +118,26 @@ export const Feedback = () => {
           ]}
         />
       </div>
+
       <Headings
         title="Congratulations !"
         description="Your personalized feedback is now available. Dive in to see your strengths, areas for improvement, and tips to help you ace your next interview."
       />
 
-      <p className="text-base text-muted-foreground">
-        Your overall interview ratings :{" "}
+      <p className="text-base text-muted-foreground mb-4">
+        Your overall interview ratings:{" "}
         <span className="text-emerald-500 font-semibold text-xl">
           {overAllRating} / 10
         </span>
       </p>
 
-      {interview && <InterviewPin interview={interview} onMockPage />}
+      {interview && (
+        <InterviewPin interview={interview} onMockPage />
+      )}
 
       <Headings title="Interview Feedback" isSubHeading />
 
-      {feedbacks && (
+      {feedbacks.length > 0 ? (
         <Accordion type="single" collapsible className="space-y-6">
           {feedbacks.map((feed) => (
             <AccordionItem
@@ -155,9 +158,9 @@ export const Feedback = () => {
               </AccordionTrigger>
 
               <AccordionContent className="px-5 py-6 bg-white rounded-b-lg space-y-5 shadow-inner">
-                <div className="text-lg font-semibold to-gray-700">
+                <div className="text-lg font-semibold text-gray-700">
                   <Star className="inline mr-2 text-yellow-400" />
-                  Rating : {feed.rating}
+                  Rating: {feed.rating}
                 </div>
 
                 <Card className="border-none space-y-3 p-4 bg-green-50 rounded-lg shadow-md">
@@ -196,6 +199,17 @@ export const Feedback = () => {
             </AccordionItem>
           ))}
         </Accordion>
+      ) : (
+        <div className="w-full flex justify-center items-center py-10">
+          <img
+            src="/assets/svg/not-found.svg"
+            className="w-24 h-24 object-contain"
+            alt="No feedback"
+          />
+          <p className="text-gray-500 text-xl mt-4">
+            No feedback available for this interview yet.
+          </p>
+        </div>
       )}
     </div>
   );
